@@ -1,10 +1,41 @@
 body{
 	padding: 0;
 }
+
+strong{
+	color: red;
+}
 .jumbotron{
 	margin-bottom: 0;
 }
 
-.box{
+#out{
+	width:  100%;
+	margin: 0 auto;
+	box-shadow: 
+}
 
+#out p{
+	border-radius:10px;
+	position: absolute;
+	margin-top: 100px;
+	margin-left: 4em;
+	background: rgba(255,255,255, 0.9);
+	padding: 48px;
+	box-shadow: 10px 5px 5px blur black;
+	z-index: 100;
+ ;
+}
+#out img{
+	border-radius:10px;
+	position: absolute;
+	margin-top: 100px;
+	margin-left: 16em;
+	box-shadow: inset 0 0 1em gold, 0 0 1em red;
+	border: 3px solid red;
+	z-index: 100;
+}
+
+.box{
+ 
 }

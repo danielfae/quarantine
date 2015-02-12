@@ -11,10 +11,10 @@ function geoFindMe() {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
 
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+    output.innerHTML = '<p>Your Current Position is:<br> <br>Latitude: ' + latitude + '° <br>Longitude:  ' + longitude + '°<br><br> We sent a WHO squad to<br><strong>Quarantine the Area</strong></p>';
 
     var img = new Image();
-    img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+    img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&markers=icon:http://tinyurl.com/2ftvtt6|" + latitude + "," + longitude + "&zoom=15&size=300x300&sensor=false";
 
     output.appendChild(img);
   };
@@ -56,11 +56,12 @@ function initialize() {
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'You Are Here'
+        content: 'You Are Here!'
       });
 
       map.setCenter(pos);
-      map.setZoom(15);
+      map.setZoom(16);
+      map.setmapTypeId(ROADMAP);
     }, function() {
       handleNoGeolocation(true);
     });
