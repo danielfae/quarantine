@@ -14,37 +14,36 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/secured.css">
     <!-- endbuild -->
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-  <style>
-      #map-canvas {
-        width: 100%;
-        height: 500px;
-        margin: 0px;
-        padding: 0px
-      }
-  </style>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABO_y-9QfYZGwkLF9_XcKTrZoGqR_cNWs"></script>
+ --> <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+
 
  
-
    
-<section>
+<section  class="box">
   <div class="jumbotron">
         <h1>Quarantine Me!</h1>
-        <p class="lead">Oh no! You've got a <strong>Pandemic Disease</strong>?</p>
+        <p class="lead">Oh no, You've got a <strong>Pandemic Disease !!!</strong></p>
         <p><a  href="#"><button class="btn btn-lg btn-danger" onclick="geoFindMe()">Quick, Hit the Button!</button></a></p>
     
 		<div id="out"></div>
+
+		
+
 		
   </div>
 </section>    
+<div id="map-canvas" style="width:100%; height:500px; z-index:-3;"></div>
 
-<div id="map-canvas"></div>
+
+
 
 
     <!-- build:js(.) scripts/vendor.js -->

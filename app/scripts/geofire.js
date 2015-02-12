@@ -7,6 +7,7 @@ function geoFindMe() {
   }
 
   function success(position) {
+    
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
 
@@ -34,14 +35,15 @@ function geoFindMe() {
 // prompted by your browser. If you see a blank space instead of the map, this
 // is probably because you have denied permission for location sharing.
 
-var map;
+// var map;
 
 function initialize() {
   var mapOptions = {
-    zoom: 6
+    zoom: 11,
+    center: new google.maps.LatLng(59.90,10.7),
+    mapTypeId: google.maps.MapTypeId.HYBRID
   };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
@@ -49,13 +51,16 @@ function initialize() {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
+  
+
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'Location found using HTML5.'
+        content: 'You Are Here'
       });
 
       map.setCenter(pos);
+      map.setZoom(15);
     }, function() {
       handleNoGeolocation(true);
     });
@@ -81,5 +86,15 @@ function handleNoGeolocation(errorFlag) {
   var infowindow = new google.maps.InfoWindow(options);
   map.setCenter(options.position);
 }
+
+// function initialize2() {
+//   var mapOptions = {
+//     zoom: 8,
+//     center: new google.maps.LatLng(-34.397, 150.644),
+//     mapTypeId: google.maps.MapTypeId.ROADMAP
+//   }
+//   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+// }
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
